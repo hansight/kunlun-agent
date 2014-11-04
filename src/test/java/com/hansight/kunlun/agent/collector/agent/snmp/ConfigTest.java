@@ -5,14 +5,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.hansight.kunlun.agent.collector.coordinator.config.AgentConfig;
 import com.hansight.kunlun.agent.collector.coordinator.config.AgentConfigService;
+import com.hansight.kunlun.agent.collector.coordinator.config.ConfigConstants;
+import com.hansight.kunlun.agent.collector.coordinator.config.ConfigException;
+import com.hansight.kunlun.agent.collector.coordinator.config.ForwarderConfig;
+import com.hansight.kunlun.agent.collector.coordinator.config.ForwarderConfigService;
 
 import java.net.ConnectException;
 import java.util.List;
 import java.util.UUID;
 
 public class ConfigTest {
-   /* AgentConfigService agent;
+   AgentConfigService agent;
     ForwarderConfigService forwarder;
     String ds_uuid = "ds05";
     String agent_name = "agent";
@@ -103,13 +108,13 @@ public class ConfigTest {
         ForwarderConfig config = new ForwarderConfig();
         config.put(ConfigConstants.DATASOURCE_ID, ds_uuid);
         
-         asset.setParser("delimit");
+        /*asset.setParser("delimit");
         asset.setProtocol("file");
         asset.setCategory("default");
         asset.setType("event");
-          asset.setPattern("{separate:'\\t',fields:['#', '@timestamp', 'generated_date' , 'product_entity' , 'product' , 'product_ip', 'product_mac', 'management_server', 'malware', 'endpoint' , 's_host' , 'user_name' , 'handling', 'results' , 'detections' , 'entry_type' , 'details' ]}");
+        asset.setPattern("{separate:'\\t',fields:['#', '@timestamp', 'generated_date' , 'product_entity' , 'product' , 'product_ip', 'product_mac', 'management_server', 'malware', 'endpoint' , 's_host' , 'user_name' , 'handling', 'results' , 'detections' , 'entry_type' , 'details' ]}");
          asset.setPattern("{separate:',',fields:['@timestamp','protocol_group','protocol','vlan_id','direction','d_ip','d_port','d_mac','s_ip','s_port','s_mac','domain_name','host_name','infect_name','risk_type_group','risk_type','file_name','file_ext_name','file_true_type','file_size','rule_id','desc','confidence','email_receiver','email_sender','topic','bot_command','bot_url','channel_name','nick_name','url','user_name','authentication','user_agent','target_share','detector','potential_risk','has_q_file','q_file_path','file_name_in_arc','restrict_type','d_host','s_host','task_id','severity','s_group','s_zone','d_group','d_zone','detection_type','blocked','dce_hash1','dce_hash2','src_user_name1','src_user_login_time1','src_user_name2','src_user_login_time2','src_user_name3','src_user_login_time3','dst_user_name1','dst_user_login_time1','dst_user_name2','dst_user_login_time2','dst_user_name3','dst_user_login_time3','dst']}");
-
+         */
          
 
         config.put("parser", "delimit");
@@ -157,13 +162,13 @@ public class ConfigTest {
         ForwarderConfig config = new ForwarderConfig();
         config.put(ConfigConstants.DATASOURCE_ID, ds_uuid);
         
-         asset.setParser("delimit");
+        /* asset.setParser("delimit");
         asset.setProtocol("file");
         asset.setCategory("default");
         asset.setType("event");
-          asset.setPattern("{separate:'\\t',fields:['#', '@timestamp', 'generated_date' , 'product_entity' , 'product' , 'product_ip', 'product_mac', 'management_server', 'malware', 'endpoint' , 's_host' , 'user_name' , 'handling', 'results' , 'detections' , 'entry_type' , 'details' ]}");
-         asset.setPattern("{separate:',',fields:['@timestamp','protocol_group','protocol','vlan_id','direction','d_ip','d_port','d_mac','s_ip','s_port','s_mac','domain_name','host_name','infect_name','risk_type_group','risk_type','file_name','file_ext_name','file_true_type','file_size','rule_id','desc','confidence','email_receiver','email_sender','topic','bot_command','bot_url','channel_name','nick_name','url','user_name','authentication','user_agent','target_share','detector','potential_risk','has_q_file','q_file_path','file_name_in_arc','restrict_type','d_host','s_host','task_id','severity','s_group','s_zone','d_group','d_zone','detection_type','blocked','dce_hash1','dce_hash2','src_user_name1','src_user_login_time1','src_user_name2','src_user_login_time2','src_user_name3','src_user_login_time3','dst_user_name1','dst_user_login_time1','dst_user_name2','dst_user_login_time2','dst_user_name3','dst_user_login_time3','dst']}");
-
+        asset.setPattern("{separate:'\\t',fields:['#', '@timestamp', 'generated_date' , 'product_entity' , 'product' , 'product_ip', 'product_mac', 'management_server', 'malware', 'endpoint' , 's_host' , 'user_name' , 'handling', 'results' , 'detections' , 'entry_type' , 'details' ]}");
+        asset.setPattern("{separate:',',fields:['@timestamp','protocol_group','protocol','vlan_id','direction','d_ip','d_port','d_mac','s_ip','s_port','s_mac','domain_name','host_name','infect_name','risk_type_group','risk_type','file_name','file_ext_name','file_true_type','file_size','rule_id','desc','confidence','email_receiver','email_sender','topic','bot_command','bot_url','channel_name','nick_name','url','user_name','authentication','user_agent','target_share','detector','potential_risk','has_q_file','q_file_path','file_name_in_arc','restrict_type','d_host','s_host','task_id','severity','s_group','s_zone','d_group','d_zone','detection_type','blocked','dce_hash1','dce_hash2','src_user_name1','src_user_login_time1','src_user_name2','src_user_login_time2','src_user_name3','src_user_login_time3','dst_user_name1','dst_user_login_time1','dst_user_name2','dst_user_login_time2','dst_user_name3','dst_user_login_time3','dst']}");
+         */   
          
         //  config.put("id", "mJr4u9pTRiWhe8-zjcZklA");
         config.put("parser", "delimit");
@@ -171,5 +176,5 @@ public class ConfigTest {
         config.put("category", "TDA");
         config.put("pattern", "{separate:',',fields:['@timestamp','protocol_group','protocol','vlan_id','direction','d_ip','d_port','d_mac','s_ip','s_port','s_mac','domain_name','host_name','infect_name','risk_type_group','risk_type','file_name','file_ext_name','file_true_type','file_size','rule_id','desc','confidence','email_receiver','email_sender','topic','bot_command','bot_url','channel_name','nick_name','url','user_name','authentication','user_agent','target_share','detector','potential_risk','has_q_file','q_file_path','file_name_in_arc','restrict_type','d_host','s_host','task_id','severity','s_group','s_zone','d_group','d_zone','detection_type','blocked','dce_hash1','dce_hash2','src_user_name1','src_user_login_time1','src_user_name2','src_user_login_time2','src_user_name3','src_user_login_time3','dst_user_name1','dst_user_login_time1','dst_user_name2','dst_user_login_time2','dst_user_name3','dst_user_login_time3','dst']}");
         forwarder.delete(config);
-    }*/
+    }
 }
