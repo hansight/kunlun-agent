@@ -1,0 +1,1 @@
+jps|cat| grep ka| cut -d ' ' -f 1| xargs kill -9

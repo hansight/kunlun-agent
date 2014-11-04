@@ -1,0 +1,18 @@
+{
+   "namespace": "com.hansight.kunlun.collector.common.model",
+   "type": "record",
+   "name": "Event",
+   "fields": [
+      {
+         "name": "header",
+         "type": [{"type" : "map", "values" : "string"},"null"]
+      },
+      {
+         "name": "body",
+         "type": [
+            "bytes",
+            "null"
+         ]
+      }
+   ]
+}
