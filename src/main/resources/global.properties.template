@@ -1,0 +1,45 @@
+# zookeeper address url
+zookeeper.connect=yzh:2181
+# zookeeper timeout  unit:ms
+zookeeper.connection.timeout.ms=1000000
+zookeeper.session.timeout.ms = 30000
+#kafka      address url   e.g local:9092,local2:9092
+metadata.broker.list=yzh:9092
+#elacsearch cluster name
+es.cluster.name=es130
+#elacsearch  address url e.g local:9300,local2:9300
+es.cluster.hosts=yzh:9300
+# web elasticsearch request proxy, 
+# use es.cluster.hosts and es.cluster.http.port
+# to get elasticsearch http url.
+es.cluster.http.port=9200
+
+request.required.acks=1
+#kafka producer type sync or async
+producer.type=async
+#kafka compression class no need to modify
+compression.serializer.class=kafka.serializer.DefaultEncoder
+#kafka key compression class no need to modify
+key.serializer.class=kafka.serializer.DefaultEncoder
+#kafka read offsets no need to modify
+offsets.topic.segment.bytes=100
+#kafka topic  partition nums  no need to modify
+kafka.metadata.partitions=1
+#kafka produce is auto commit   no need to modify
+auto.commit.enable=true
+# when kafka produce is auto commit how long to commit unit:ms    no need to modify
+auto.commit.interval.ms=10000
+#  read    from   kafka form small nums or the latest  no need to modify
+auto.offset.reset=smallest
+#  our's zookeeper monitor heartbeat how long   once unit:ms   no need to modify
+monitor.log.times=20000
+#  our's zookeeper monitor heartbeat  thread size default is 10
+monitor.thread.pool.size=10
+# our's zookeeper monitor mark logs process how much unit:nm
+mark.doActionThreshold=10000
+# spark master and worker WebUI 
+spark.master.metrics=HDP125:8080,HDP126:8080
+spark.worker.metrics=HDP127:8081,HDP128:8081
+# option for spark metrics url
+spark.master.metrics.url=/metrics/master/json/
+spark.worker.metrics.url=/metrics/json/
