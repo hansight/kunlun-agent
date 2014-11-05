@@ -1,4 +1,4 @@
-kunlun-agent
-============
+kunlun-forwarder
+================
 
-采集代理
+采集转发器
